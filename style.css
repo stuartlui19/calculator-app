@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #eef1f7;
+  color: #202638;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.calculator {
+  width: min(100% - 32px, 340px);
+  padding: 20px;
+  border-radius: 24px;
+  background: #202638;
+  box-shadow: 0 20px 50px #20263830;
+}
+
+.display {
+  min-height: 96px;
+  padding: 18px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: #fff;
+  font-size: clamp(2.5rem, 12vw, 3.5rem);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  min-height: 62px;
+  border: 0;
+  border-radius: 16px;
+  background: #343d52;
+  color: #fff;
+  font: inherit;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: filter 120ms ease, transform 120ms ease;
+}
+
+.key:hover {
+  filter: brightness(1.18);
+}
+
+.key:active {
+  transform: scale(0.96);
+}
+
+.key:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.key-operator {
+  background: #46516b;
+}
+
+.key-clear {
+  background: #e3e8f1;
+  color: #202638;
+}
+
+.key-equals {
+  grid-column: 4;
+  grid-row: 3 / span 2;
+  background: #727df5;
+  font-size: 1.7rem;
+}
+
+.key-zero {
+  grid-column: span 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key {
+    transition: none;
+  }
+}
